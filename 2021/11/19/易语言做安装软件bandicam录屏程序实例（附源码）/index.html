@@ -1,0 +1,685 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/tubiao.png">
+  <link rel="icon" href="/img/tubiao.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="说明现在程序仍能正常使用，并且我一直都在用bandicam录屏程序来录取素材剪辑视频。 我写这篇文章还是想记录下自己三四年前在易语言编程方面意气风发，啊不过现在仍是小白级别吧 声明：我最早于2018-7将程序成品及其源码发表在科学刀论坛[精品软件]和[开源交流]板块里，属全原创，仅供学习交流使用，若要搬运请注明出处，程序内bandicam破解版来源于刀网。 帖子详见https:&#x2F;&#x2F;www.kxda">
+<meta property="og:type" content="article">
+<meta property="og:title" content="易语言做安装软件bandicam录屏程序实例（附源码）">
+<meta property="og:url" content="http://example.com/2021/11/19/%E6%98%93%E8%AF%AD%E8%A8%80%E5%81%9A%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6bandicam%E5%BD%95%E5%B1%8F%E7%A8%8B%E5%BA%8F%E5%AE%9E%E4%BE%8B%EF%BC%88%E9%99%84%E6%BA%90%E7%A0%81%EF%BC%89/index.html">
+<meta property="og:site_name" content="Yang&#39;s Blog">
+<meta property="og:description" content="说明现在程序仍能正常使用，并且我一直都在用bandicam录屏程序来录取素材剪辑视频。 我写这篇文章还是想记录下自己三四年前在易语言编程方面意气风发，啊不过现在仍是小白级别吧 声明：我最早于2018-7将程序成品及其源码发表在科学刀论坛[精品软件]和[开源交流]板块里，属全原创，仅供学习交流使用，若要搬运请注明出处，程序内bandicam破解版来源于刀网。 帖子详见https:&#x2F;&#x2F;www.kxda">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://z3.ax1x.com/2021/11/19/Iq1OpD.png">
+<meta property="og:image" content="https://z3.ax1x.com/2021/11/19/Iq1qfO.png">
+<meta property="og:image" content="https://z3.ax1x.com/2021/11/19/Iq1Hk6.png">
+<meta property="og:image" content="https://z3.ax1x.com/2021/11/19/Iq1btK.png">
+<meta property="og:image" content="https://z3.ax1x.com/2021/11/19/Iq3bbn.png">
+<meta property="og:image" content="https://z3.ax1x.com/2021/11/19/Iq3HDs.png">
+<meta property="article:published_time" content="2021-11-19T05:47:41.000Z">
+<meta property="article:modified_time" content="2022-08-02T05:51:06.389Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="教程">
+<meta property="article:tag" content="笔记">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://z3.ax1x.com/2021/11/19/Iq1OpD.png">
+  
+  
+  
+  <title>易语言做安装软件bandicam录屏程序实例（附源码） - Yang&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"efcaa68f8ef2528538f7cf2e5e144e88","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+    <!-- Baidu Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?efcaa68f8ef2528538f7cf2e5e144e88";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Yang</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                主页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://z4a.net/images/2022/08/02/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="易语言做安装软件bandicam录屏程序实例（附源码）"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2021-11-19 13:47" pubdate>
+          November 19, 2021 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.5k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          13 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">易语言做安装软件bandicam录屏程序实例（附源码）</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h4 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h4><p>现在程序仍能正常使用，并且我一直都在用bandicam录屏程序来录取素材剪辑视频。</p>
+<p>我写这篇文章还是想记录下自己三四年前在易语言编程方面意气风发，啊不过现在仍是小白级别吧</p>
+<p>声明：我最早于2018-7将程序成品及其源码发表在<a target="_blank" rel="noopener" href="https://www.kxdao.net/">科学刀论坛</a>[精品软件]和[开源交流]板块里，属全原创，仅供学习交流使用，若要搬运请注明出处，程序内bandicam破解版来源于刀网。</p>
+<p>帖子详见<a target="_blank" rel="noopener" href="https://www.kxdao.net/thread-116856-1-1.html">https://www.kxdao.net/thread-116856-1-1.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://z3.ax1x.com/2021/11/19/Iq1OpD.png"><img src="https://z3.ax1x.com/2021/11/19/Iq1OpD.png" srcset="/img/loading.gif" lazyload alt="帖子"></a></p>
+<p><a target="_blank" rel="noopener" href="https://z3.ax1x.com/2021/11/19/Iq1OpD.png">帖子</a></p>
+<p>源码上的署名是来源于我自己当时kxd的昵称而已…</p>
+<h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><p>我们首先得明白易语言里的图片资源表里面存储的不一定是图片，它可以是任何数据</p>
+<p><a target="_blank" rel="noopener" href="https://z3.ax1x.com/2021/11/19/Iq1qfO.png"><img src="https://z3.ax1x.com/2021/11/19/Iq1qfO.png" srcset="/img/loading.gif" lazyload alt="图片资源表"></a></p>
+<p><a target="_blank" rel="noopener" href="https://z3.ax1x.com/2021/11/19/Iq1qfO.png">图片资源表</a></p>
+<p>所以我们把握这一点，将破解后的bandicam做成压缩包，存到图片资源表里，再由易语言写出并解压出来，便达到我们安装的目的。</p>
+<p><a target="_blank" rel="noopener" href="https://z3.ax1x.com/2021/11/19/Iq1Hk6.png"><img src="https://z3.ax1x.com/2021/11/19/Iq1Hk6.png" srcset="/img/loading.gif" lazyload alt="思路"></a></p>
+<p><a target="_blank" rel="noopener" href="https://z3.ax1x.com/2021/11/19/Iq1Hk6.png">思路</a></p>
+<h4 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h4><p>我们首先需要把我们所要安装的文件或文件夹压缩为zip格式（因为我们要用到易语言的“zip压缩”命令）</p>
+<p>再在图片资源表上添加新的一项，默认只能添加图片格式，所以我们需要选到所有文件这一项</p>
+<p><a target="_blank" rel="noopener" href="https://z3.ax1x.com/2021/11/19/Iq1btK.png"><img src="https://z3.ax1x.com/2021/11/19/Iq1btK.png" srcset="/img/loading.gif" lazyload alt="所有文件"></a></p>
+<p><a target="_blank" rel="noopener" href="https://z3.ax1x.com/2021/11/19/Iq1btK.png">所有文件</a></p>
+<p>我们需要加入一个 编辑框（用来选择安装路径）、一个zip压缩组件（使用解压命令）</p>
+<p>再结合一个安浏览按钮，用来执行浏览文件夹即选择安装路径</p>
+<p>命令为：</p>
+<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs autohotkey">.版本 <span class="hljs-number">2</span>`<br>`.支持库 shell<br>.子程序 按钮被单击<br>编辑框<span class="hljs-number">1</span>.内容 ＝ 浏览文件夹 (“请选择安装目录：” ＋ “\”, )<br></code></pre></td></tr></table></figure>
+
+<p>这时就可以用安装按钮，简单加个判断安装路径是否为空命令，再执行我们的写出压缩文件命令，再用一次解压命令，完毕后删除刚刚所写出的压缩文件就ok</p>
+<p>命令为：</p>
+<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs autohotkey">.版本 <span class="hljs-number">2</span>`<br>`.支持库 eCompress`<br>`.支持库 shell<br>.子程序 _按钮<span class="hljs-number">1</span>_被单击<br></code></pre></td></tr></table></figure>
+
+<p><code>.如果 (编辑框1.内容 ＝ “”)</code><br><code>信息框 (“请输入正确的安装地址”, #信息图标, , )</code><br><code>.否则</code><br><code>写到文件 (“C:\录屏.zip”, #录屏)</code><br><code>ZIP压缩1.解压 (“C:\录屏.zip”, 编辑框1.内容 ＋ “\”)</code><br><code>删除文件 (“C:\录屏.zip”)</code><br>当然润色一下可以加一个创建快捷方式的命令</p>
+<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs autohotkey">.如果真 (信息框 (“Bandicam破解版安装成功，是否创建快捷方式到桌面？”, <span class="hljs-number">4</span> ＋ <span class="hljs-number">32</span>, “安装成功”, ) ＝ #是钮)`<br>`创建快捷方式 (取特定目录 (#系统桌面) ＋ “\Bandicam录屏.lnk”, 编辑框<span class="hljs-number">1</span>.内容 ＋ “\Bandicam\BandicamPortable.exe”, , , )`<br>`信息框 (“完成！”, #信息图标, , )`<br>`.如果真结束<br></code></pre></td></tr></table></figure>
+
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p><a target="_blank" rel="noopener" href="https://z3.ax1x.com/2021/11/19/Iq3bbn.png"><img src="https://z3.ax1x.com/2021/11/19/Iq3bbn.png" srcset="/img/loading.gif" lazyload alt="程序界面"></a></p>
+<p><a target="_blank" rel="noopener" href="https://z3.ax1x.com/2021/11/19/Iq3bbn.png">程序界面</a></p>
+<p><a target="_blank" rel="noopener" href="https://z3.ax1x.com/2021/11/19/Iq3HDs.png"><img src="https://z3.ax1x.com/2021/11/19/Iq3HDs.png" srcset="/img/loading.gif" lazyload alt="源码"></a></p>
+<p><a target="_blank" rel="noopener" href="https://z3.ax1x.com/2021/11/19/Iq3HDs.png">源码</a></p>
+<p>该源码是比较入门级别的，但是也是值得学习，考验对基础命令知识的把握，对于易语言新手来说是个很好的学习与训练，所以用易语言做安装程序并不难，相当于做了一层壳，把原本的程序压缩的更小，更容易传输，且安装程序的本质也是如此。</p>
+<h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><p>如果出现导出文件后解压不全问题，可能是因为压缩包文件太大，建议把程序本身分开做成多个压缩包（就是常说的分卷），再依次解压就行</p>
+<p>因为在当时我也做了个酷我音乐破解版安装器遇到了这个问题，最终用上面的方法解决</p>
+<p>我也在科学刀论坛了发过</p>
+<p>下载链接: <a target="_blank" rel="noopener" href="https://www.kxdao.net/study_linkkiller-link.html?url=https://pan.baidu.com/s/1pK8G-0cs2wyVb6ycWgePAg">https://pan.baidu.com/s/1pK8G-0cs2wyVb6ycWgePAg</a> 密码: s3yd</p>
+<p>帖子详见：<a target="_blank" rel="noopener" href="https://www.kxdao.net/thread-117444-1-1.html">https://www.kxdao.net/thread-117444-1-1.html</a></p>
+<h4 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h4><p>成品：链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1IyKjkPbhrckXx2T16uSJRQ">https://pan.baidu.com/s/1IyKjkPbhrckXx2T16uSJRQ</a> 密码: mfyi<br>源码：链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1VcAT0dliRziyD3d97JgboQ">https://pan.baidu.com/s/1VcAT0dliRziyD3d97JgboQ</a> 密码: 2er4</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%BC%96%E7%A8%8B/" class="category-chain-item">编程</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E6%95%99%E7%A8%8B/">#教程</a>
+      
+        <a href="/tags/%E7%AC%94%E8%AE%B0/">#笔记</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>易语言做安装软件bandicam录屏程序实例（附源码）</div>
+      <div>http://example.com/2021/11/19/易语言做安装软件bandicam录屏程序实例（附源码）/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>November 19, 2021</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>Licensed under</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/08/21/%E7%94%A8%E6%98%93%E8%AF%AD%E8%A8%80%E8%A7%A3%E5%86%B3%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E8%87%AA%E5%8A%A8%E9%92%93%E9%B1%BC/" title="用易语言解决我的世界自动钓鱼">
+                        <span class="hidden-mobile">用易语言解决我的世界自动钓鱼</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;Table of Contents</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
